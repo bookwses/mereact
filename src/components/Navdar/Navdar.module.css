@@ -1,0 +1,97 @@
+nav {
+    background-color: #cecece;
+    overflow: hidden;
+    position: relative;
+
+    & a {
+        color: #000000;
+    }
+
+    .bars {
+        position: absolute;
+        top: 45px;
+        right: 20px;
+        color: #fff;
+    }
+
+    & .container {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    & .nav_con {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .logo {
+            & a {
+                font-size: 25px;
+                --bg-size: 400%;
+                --color-one: hsl(15 90% 55%);
+                --color-two: hsl(40 95% 55%);
+                background: linear-gradient(90deg,
+                        var(--color-one),
+                        var(--color-two),
+                        var(--color-one)) 0 0 / var(--bg-size) 100%;
+                animation: move-bg 8s infinite linear;
+                color: transparent;
+                background-clip: text;
+                text-decoration: none;
+                font-weight: bold;
+                border-bottom: 3px solid #0099ff;
+            }
+        }
+
+        & ul {
+            display: flex;
+            list-style: none;
+
+            & li {
+                margin: 0 35px;
+
+                & a {
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav_con {
+        flex-direction: column;
+        height: auto !important;
+        margin: 50px 0;
+        align-items: start !important;
+        margin-left: 30px;
+
+        & ul, .button {
+            display: none !important;
+        }
+    }
+
+    .mobile_menu {
+        list-style: none;
+
+        & li {
+            margin: 35px;
+
+            & a {
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+
+    @media screen and (min-width: 481px) {
+
+        .mobile_menu,
+        .bars,
+        .mobile_button {
+            display: none;
+        }
+    }
+}
